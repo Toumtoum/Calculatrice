@@ -13,6 +13,7 @@ var result;
 
 
 
+
 //----------------------------FONCTIONS-----------------------------------------
 
 function returnKeyValue (){
@@ -20,7 +21,6 @@ function returnKeyValue (){
 for(var i= 0; i < pressKey.length;i++){
   pressKey[i].onclick = function (){
     keyValue = this.value ;
-    // console.log(keyValue);
     display.value += keyValue;
   };
 }
@@ -35,10 +35,20 @@ for(var i= 0; i < pressKey.length;i++){
 
 function displayResult () {
 
-  result = display.value;
+  result = eval(display.value);
+  display.value = parseFloat(result);
+  console.log(result);
+
+}
+
+function erasing () {
+
+ display.value = display.value.substring(0,display.value.length - 1);
 
 
 }
+
+
 
 
 
@@ -46,4 +56,3 @@ function displayResult () {
 
 
 returnKeyValue ();
-console.log(result);
