@@ -16,7 +16,7 @@ var result;
 
 //----------------------------FONCTIONS-----------------------------------------
 
-function returnKeyValue (){
+function displayOperation(){
 
 for(var i= 0; i < pressKey.length;i++){
   pressKey[i].onclick = function (){
@@ -25,13 +25,6 @@ for(var i= 0; i < pressKey.length;i++){
   };
 }
 }
-
-// function displayOperation() {
-//
-//   returnKeyValue ()
-//   display.value += keyValue;
-//   console.log(keyValue);
-// }
 
 function displayResult () {
 
@@ -45,14 +38,17 @@ function erasing () {
 
  display.value = display.value.substring(0,display.value.length - 1);
 
+}
+
+function init() {
+
+  display.value = "";
 
 }
 
 
 
-
-
 //------------------------------SCRIPT------------------------------------------
 
-
-returnKeyValue ();
+window.onload = init;
+displayOperation();
